@@ -1,10 +1,7 @@
 import React, {PureComponent} from 'react'
-import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
 
 class PagesDetail extends PureComponent {
-    static propTypes = {
-        page: PropTypes.string.isRequired,
-    }
 
     render() {
         const { page } = this.props 
@@ -21,4 +18,10 @@ class PagesDetail extends PureComponent {
     }
 }
 
-export default PagesDetail
+const mapStateToProps = function (state) {
+    return {
+      page: state.pages.find(page => page.id === 2)
+    }
+  }
+  
+  export default connect(mapStateToProps)(PagesDetail)

@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
 
 class PagesList extends PureComponent {
     static propTypes = {
@@ -20,13 +21,13 @@ render() {
             <h1>Adverts List</h1>
 
             <table>
-                <thread>
-                    <tr>
-                        <th>Id#</th>
-                        <th>Title</th>
-                        <th>Price</th>
-                    </tr>
-                </thread>
+                <div>
+                    <div>
+                        <item>Id#</item>
+                        <item>Title</item>
+                        <item>Price</item>
+                    </div>
+                </div>
                 <tbody>
                     { pages.map(page => (<tr key={page.id}>
                     <td>{page.id}</td>
@@ -41,4 +42,9 @@ render() {
 }
 }
 
-export default PagesList
+const mapStateToProps = function (state) {
+    return {
+        pages: state.pages
+    }
+}
+export default connect(mapStateToProps)(PagesList)

@@ -28,8 +28,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <PagesList pages={ pages } />
-        <PagesDetail page={ pages[0] } />
+        <PagesList/>
+        <PagesDetail/>
       </div>
     );
   }
