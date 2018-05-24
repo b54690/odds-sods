@@ -18,9 +18,9 @@ class PagesDetail extends PureComponent {
     }
 }
 
-const mapStateToProps = function (state) {
+const mapStateToProps = function (state, props) {
     return {
-      page: state.pages.find(page => page.id === 2)
+      page: state.pages.find(page => page.id === Number(props.match.params.id))
     }
   }
   
