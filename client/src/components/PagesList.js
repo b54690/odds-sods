@@ -1,17 +1,12 @@
 import React, {PureComponent} from 'react'
-import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {fetchDetailedPage} from '../actions/pages'
+import {fetchAllPages} from '../actions/pages'
 
 class PagesList extends PureComponent {
-    static propTypes = {
-        pages: PropTypes.arrayOf(PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            title: PropTypes.string.isRequired,
-            price: PropTypes.number.isRequired,
-            email: PropTypes.string.isRequired,
-            phone: PropTypes.number.isRequired,
-            description: PropTypes.string.isRequired
-        })).isRequired
+
+componentWillMount() {
+    this.props.fetchAllPages()
     }
 
 render() {
@@ -47,4 +42,4 @@ const mapStateToProps = function (state) {
         pages: state.pages
     }
 }
-export default connect(mapStateToProps)(PagesList)
+export default connect(mapStateToProps, { fetchAllPages })(PagesList)
