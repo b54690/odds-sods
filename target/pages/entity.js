@@ -18,31 +18,31 @@ __decorate([
     __metadata("design:type", Number)
 ], Page.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('text', { nullable: false }),
+    typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", String)
 ], Page.prototype, "firstName", void 0);
 __decorate([
-    typeorm_1.Column('text', { nullable: false }),
+    typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", String)
 ], Page.prototype, "lastName", void 0);
 __decorate([
-    typeorm_1.Column('text', { nullable: false }),
+    typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", String)
 ], Page.prototype, "email", void 0);
 __decorate([
-    typeorm_1.Column('text', { nullable: false }),
+    typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", Number)
 ], Page.prototype, "phone", void 0);
 __decorate([
-    typeorm_1.Column('text', { nullable: false }),
+    typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", String)
 ], Page.prototype, "title", void 0);
 __decorate([
-    typeorm_1.Column('text', { nullable: false }),
+    typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", String)
 ], Page.prototype, "description", void 0);
 __decorate([
-    typeorm_1.Column('text', { nullable: false }),
+    typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", Number)
 ], Page.prototype, "price", void 0);
 Page = __decorate([
