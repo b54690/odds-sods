@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
-import {fetchDetailedPage} from '../actions/pages'
 import {fetchAllPages} from '../actions/pages'
+import {Link} from 'react-router-dom'
 
 class PagesList extends PureComponent {
 
@@ -10,7 +10,7 @@ componentWillMount() {
     }
 
 render() {
-    const {pages} = this.props
+    const { pages } = this.props
     return (
         <div>
             <h1>Adverts List</h1>
@@ -18,15 +18,15 @@ render() {
             <table>
                 <div>
                     <div>
-                        <item>Id#</item>
-                        <item>Title</item>
-                        <item>Price</item>
+                        <td>Id</td>
+                        <td>Title</td>
+                        <td>Price</td>
                     </div>
                 </div>
                 <tbody>
                     { pages.map(page => (<tr key={page.id}>
                     <td>{page.id}</td>
-                    <td>{page.title}</td>
+                    <Link to={ `/pages/${page.id}` }>{page.title}</Link>
                     <td>&euro; {page.price}.00</td>
                 </tr>))}
                 </tbody>

@@ -1,11 +1,11 @@
 import * as request from 'superagent'
 
-const baseUrl = 'http://localhost:4001'
+const baseUrl = 'http://localhost:4000'
 
 export const FETCH_DETAILED_PAGE = 'FETCH_DETAILED_PAGE'
 export const FETCH_ALL_PAGES = 'FETCH_ALL_PAGES'
 
-export const fetchPage = (pageId) => (dispatch) => {
+export const fetchDetailedPage = (pageId) => (dispatch) => {
   request
     .get(`${baseUrl}/pages/${pageId}`)
     .then(response => dispatch({

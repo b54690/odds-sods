@@ -1,10 +1,17 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
+import {fetchDetailedPage} from '../actions/pages'
 
 class PagesDetail extends PureComponent {
 
+    componentWillMount() {
+        this.props.fetchDetailedPage(this.props.match.params.id)
+    }
+
     render() {
         const { page } = this.props 
+        if (!page) return null
+
         return (
             <div>
                 <h1>{ page.title }</h1>
@@ -20,8 +27,8 @@ class PagesDetail extends PureComponent {
 
 const mapStateToProps = function (state, props) {
     return {
-      page: state.pages.find(page => page.id === Number(props.match.params.id))
+    page: state.page
     }
   }
   
-  export default connect(mapStateToProps)(PagesDetail)
+  export default connect(mapStateToProps, {fetchDetailedPage})(PagesDetail)
